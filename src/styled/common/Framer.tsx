@@ -13,7 +13,7 @@ export const Framer = styled.div<FramerProps>`
 	min-height: 200px;
 	min-width: 200px;
 	width: 40%;
-	height: 60%;
+	height: 50%;
 	border: ${(props) => props.border || `1.5px solid ${COLORS.LIGHT_GREEN}`};
 	background-color: ${COLORS.DARK_GREEN};
 	color: ${COLORS.WHITE};
