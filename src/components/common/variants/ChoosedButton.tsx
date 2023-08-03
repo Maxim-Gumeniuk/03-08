@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Button } from '../Button'
+import { Button } from '../../../styled/common/Button'
 import Link from 'next/link'
 
 enum Variants {

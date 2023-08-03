@@ -1,5 +1,3 @@
-import { GlobalStyle } from '@/styled/global'
-
 export default function RootLayout({
 	children,
 }: {

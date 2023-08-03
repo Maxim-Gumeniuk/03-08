@@ -1,6 +1,6 @@
 import { isSecond } from '@/pages/login'
 import { Flex } from '@/styled/common/Flex'
-import { ChoosedButton } from '@/styled/common/variants/ChoosedButton'
+import { ChoosedButton } from '@/components/common/variants/ChoosedButton'
 import { CommonRoutes } from '@/types/enums/commonRoutes'
 import { useContext } from 'react'
 

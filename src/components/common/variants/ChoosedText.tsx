@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { Text } from '@/styled/common/Text'
-import { COLORS } from '../../enum/colors'
-import { FONT_SIZE } from '../../enum/font_size'
-import { FONT_WEIGHT } from '../../enum/font-weight'
+import { COLORS } from '../../../styled/enum/colors'
+import { FONT_SIZE } from '../../../styled/enum/font_size'
+import { FONT_WEIGHT } from '../../../styled/enum/font-weight'
 
 enum Variants {
 	primary = 'primary',

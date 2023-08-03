@@ -1,4 +1,4 @@
-import AuthFormComponent from '@/components/auth/AuthForm'
+import AuthFormComponent from '@/components/view/auth/AuthForm'
 import { Centered } from '@/styled/common/Centered'
 import { Framer } from '@/styled/common/Framer'
 import { CommonRoutes } from '@/types/enums/commonRoutes'
