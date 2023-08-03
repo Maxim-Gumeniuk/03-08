@@ -1,0 +1,7 @@
+export enum COLORS {
+	LIGHT_GREEN = '#00B28F',
+	BLACK = '#000',
+	WHITE = '#FFF',
+	DARK_GREEN = '#007965',
+	MEDIUM_GREEN = '#00B28F',
+}
