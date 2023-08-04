@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { COLORS } from '../enum/colors'
+import { COLORS } from '../../types/enums/styles/colors'
 
 interface ButtonProps {
 	width?: string

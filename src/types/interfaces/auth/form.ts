@@ -6,3 +6,8 @@ export interface TextAuthForm {
 export interface NavLink {
 	subTextLink: string
 }
+
+export interface InitialValues {
+	email: string
+	password: string
+}

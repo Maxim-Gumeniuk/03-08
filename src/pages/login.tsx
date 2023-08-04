@@ -1,13 +1,28 @@
-import AuthFormComponent from '@/components/view/auth/AuthForm'
-import { useFormik } from 'formik'
+import { FormikErrors, FormikTouched, FormikValues, useFormik } from 'formik'
 import { Centered } from '@/styled/common/Centered'
 import { Framer } from '@/styled/common/Framer'
-import { CommonRoutes } from '@/types/enums/commonRoutes'
-import { createContext } from 'react'
-// import * as Yup from 'yup'
-// import YupPassword from 'yup-password'
+import { CommonRoutes } from '@/types/enums/routes/commonRoutes'
+import { ChangeEvent, createContext } from 'react'
+import AuthView from '@/components/view/auth/AuthView'
+import {
+	InitialValues,
+	NavLink,
+	TextAuthForm,
+} from '@/types/interfaces/auth/form'
+import { authValidationSchema } from '@/utils/validation/auth_validation'
+export interface ContextProps {
+	isSecond?: boolean
+	text: TextAuthForm
+	navLink: NavLink
+	values: FormikValues
+	errors: FormikErrors<InitialValues>
+	handleChange: (e: ChangeEvent<any>) => void
+	handleSubmit: () => void
+	touched: FormikTouched<InitialValues>
+	name: InitialValues
+}
 
-export const isSecond = createContext<boolean>(false)
+export const LoginContext = createContext<ContextProps | null>(null)
 
 const text = {
 	title: 'Sign In',
@@ -24,27 +39,39 @@ const Login = () => {
 			email: '',
 			password: '',
 		},
+		validationSchema: authValidationSchema,
 		onSubmit: () => {
-			console.log('hi')
+			console.log('submit')
 		},
 	})
 
 	const { values, errors, handleChange, handleSubmit, touched } = formik
+
+	const contextValue = {
+		isSecond: true,
+		text,
+		navLink,
+		values,
+		errors,
+		handleChange,
+		handleSubmit,
+		touched,
+		name: {
+			email: 'email',
+			password: 'password',
+		},
+	}
+
 	return (
 		<Framer>
 			<Centered>
-				<isSecond.Provider value={true}>
-					<AuthFormComponent
-						text={text}
-						navLink={navLink}
+				<LoginContext.Provider value={contextValue}>
+					<AuthView
 						handleSubmit={handleSubmit}
-						handleChange={handleChange}
-						value={values.email}
 						error={errors.email || null}
 						touched={touched.email || false}
-						name="email"
 					/>
-				</isSecond.Provider>
+				</LoginContext.Provider>
 			</Centered>
 		</Framer>
 	)
