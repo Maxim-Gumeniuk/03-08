@@ -1,3 +1,5 @@
+import { ChoosedText } from '@/components/common/variants/ChoosedText'
+import { Flex } from '@/styled/common/Flex'
 import { useRouter } from 'next/router'
 
 export default function ActivationTokenPage() {
@@ -8,13 +10,21 @@ export default function ActivationTokenPage() {
 		return (
 			<>
 				{activationToken ? (
-					<div>
-						<h1>Activation Page</h1>
-						<p>Activation Token: {activationToken}</p>
-						{/* You can add more JSX elements and logic here */}
-					</div>
+					<Flex>
+						<ChoosedText
+							variants="title"
+							text="Activation Page"
+							upperCase={true}
+						/>
+					</Flex>
 				) : (
-					'error'
+					<Flex>
+						<ChoosedText
+							variants="error"
+							text="The activation token is not valid"
+							upperCase={true}
+						/>
+					</Flex>
 				)}
 			</>
 		)
