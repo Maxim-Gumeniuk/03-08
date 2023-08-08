@@ -10,7 +10,7 @@ export default function ActivationTokenPage() {
 		return (
 			<>
 				{activationToken ? (
-					<Flex>
+					<Flex w={'100%'} h={'100%'}>
 						<ChoosedText
 							variants="title"
 							text="Activation Page"
@@ -18,7 +18,7 @@ export default function ActivationTokenPage() {
 						/>
 					</Flex>
 				) : (
-					<Flex>
+					<Flex w={'100%'} h={'100%'}>
 						<ChoosedText
 							variants="error"
 							text="The activation token is not valid"

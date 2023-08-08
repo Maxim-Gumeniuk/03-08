@@ -6,7 +6,7 @@ export const signUP = (email: string, password: string) => {
 		api.post(Auth.registration, {
 			email,
 			password,
-		}).then((response) => console.log(response))
+		}).then((response) => response.data)
 	} catch (error) {
 		console.log(error)
 	}

@@ -1,3 +1,4 @@
 export const Auth = {
-	registration: 'registration',
+	registration: '/registration',
+	activation: 'activation',
 }
