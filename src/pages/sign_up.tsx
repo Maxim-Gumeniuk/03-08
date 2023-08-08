@@ -6,6 +6,7 @@ import { useFormik } from 'formik'
 import { createContext } from 'react'
 import { ContextProps } from './login'
 import { authValidationSchema } from '@/utils/validation/auth_validation'
+import { signUP } from '@/api/endpoints/auth/sign_up'
 
 const text = {
 	title: 'Sign Up',
@@ -24,7 +25,8 @@ const SignUp = () => {
 		},
 		validationSchema: authValidationSchema,
 		onSubmit: () => {
-			console.log('hi')
+			const { email, password } = values
+			signUP(email, password)
 		},
 	})
 
