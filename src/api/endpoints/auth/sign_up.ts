@@ -1,9 +1,10 @@
+import { Auth } from '@/api/types/enum/endpoints/auth'
 import axios from 'axios'
 
 export const signUP = (email: string, password: string) => {
 	try {
 		axios
-			.post('https://zero7-08.onrender.com/registration', {
+			.post(Auth.registration, {
 				email,
 				password,
 			})
